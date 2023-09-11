@@ -1,0 +1,57 @@
+
+<div class=" mx-auto mt-5 register_div">
+
+    <h2 class="mb-3 text-center"> log in</h2>
+
+
+    <div *ngIf="error" class="alert alert-danger mb-2">
+        {{error}}
+
+    </div>
+
+    <form [formGroup]="loginform"  (ngSubmit)="logindata(loginform)">
+  
+
+         <div class="mb-3">
+            <label class="mb-2" for="email">Email</label>
+            <input type="text" formControlName = 'email' class="form-control">
+    
+            <div *ngIf="loginform.get('email')?.errors !=null &&
+            loginform.get('email')?.touched  " class="alert alert-danger mt-2">
+    
+                <p *ngIf="loginform.get('email')?.errors?.['required'] ">Email is required </p>
+                <p *ngIf="loginform.get('email')?.errors?.['email'] ">Email is invalid </p>
+            </div>
+         </div>
+         <div >
+            <label class="mb-2" for="password">Password</label>
+            <div class="position-relative">
+                <input [type]="isPasswordVisible ? 'text' : 'password'" formControlName = 'password' class="form-control">
+                <img src="../../assets/images/closed_eye.png" class=" closedeye pointer"    (click)="PasswordVisibility()"
+                [hidden]="isPasswordVisible" alt="">
+                <img src="../../assets/images/open_eye.png" class="closedeye"   (click)="PasswordVisibility()"
+                [hidden]="!isPasswordVisible" alt="">
+            </div>
+    
+            <div *ngIf="loginform.get('password')?.errors !=null &&
+            loginform.get('password')?.touched  " class="alert alert-danger mt-2">
+    
+                <p *ngIf="loginform.get('password')?.errors?.['required'] ">Password is required </p>
+                <p *ngIf="loginform.get('password')?.errors?.['pattern']" >Password is invalid </p>
+               
+    
+            </div>
+
+         </div>
+
+
+         
+         
+
+         <button  class="btn btn-info mt-5">Log in</button>
+       
+    </form>
+
+</div>
+
+

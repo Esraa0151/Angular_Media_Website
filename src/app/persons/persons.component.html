@@ -1,0 +1,78 @@
+<div class="container">
+
+    
+  <div class="search_div mx-auto">
+    <input [(ngModel)]="searchQuery" (input)="search()" placeholder="Search people" class="w-100">
+    <ul>
+      <li *ngFor="let result of searchResults">
+        <a [routerLink]="['/peopledetails', result.id]">{{ result.name}}</a>
+      </li>
+    </ul>
+  </div>  
+    <div class="row mt-5 mb-1 ">
+    
+        <div class="col-md-4">
+            <div class="bodr my-5 w-25">
+            </div>
+    
+            <h2>popular people <br>
+            to watch right now</h2>
+          
+             <p class="second-color mt-3">popular people  
+                to watch right now</p>
+    
+            <div class="bodr my-5 w-100">
+            </div>
+    
+        </div>
+       
+        <div *ngFor="let movies of trendingpeople" class="col-md-2  m-auto position-relative layer_parent" >
+            
+            <a [routerLink]="['/peopledetails', movies.id]">
+            <div class = " movies ">
+    
+                <img [src]="imageprefix+movies.profile_path" alt="" class="w-100 m-2 h-100">
+    
+                <h3 class="h6 mt-2 text-center">{{movies.name}}</h3>
+                <h4 class="layer">see more....</h4>
+    
+            </div></a>
+           
+            <div class="vote position-absolute end-0 top-0">
+                  {{movies.popularity}}
+            </div>
+
+        
+    
+        </div>
+    
+    </div>
+
+
+
+    <div class="row mb-5">
+      <div class="col-md-12 d-flex justify-content-center">
+        <div class="pagination">
+          <span (click)="prevPage()" *ngIf="hasPrevPage()">Prev</span>
+          <ng-container *ngFor="let pageNumber of getPageNumbers()">
+            <span
+              [ngClass]="{'active': pageNumber === currentPage}"
+              (click)="goToPage(pageNumber)"
+            >
+              {{ pageNumber }}
+            </span>
+          </ng-container>
+          <span (click)="nextPage()" *ngIf="hasNextPage()">Next</span>
+        </div>
+      
+      </div>
+    </div>
+  
+
+
+ 
+    
+
+   
+   
+</div>

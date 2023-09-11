@@ -1,0 +1,125 @@
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+    <div class="search_div mx-auto">
+      <input [(ngModel)]="searchQuery" (input)="search()" placeholder="Search for a movie and tv show" class="w-100">
+      <ul>
+        <li *ngFor="let result of searchResults">
+          <a [routerLink]="['/details', result.media_type, result.id]">{{ result.name || result.title }}</a>
+        </li>
+      </ul>
+    </div>
+  <app-header [headerTrendingMovies] = 'trendingmovies'>  
+
+      
+
+  </app-header>
+  <div class="container mt-4">
+
+  
+
+    <div class="row mt-5">
+    
+        <div class="col-md-4">
+            <div class="bodr mb-5 mt-3 w-25">
+            </div>
+    
+            <h2>popular Movies <br>
+            to watch rigth now</h2>
+          
+             <p class="second-color mt-3">Top popular Movies 
+                to watch rigth now</p>
+    
+            <div class="bodr my-5 w-100">
+            </div>
+    
+        </div>
+       
+
+      <div *ngFor="let movies of trendingmovies" class="col-md-2 layer_parent  m-auto position-relative" >
+            
+        <a [routerLink]="['/details', movies.media_type, movies.id]">
+        <div class = " movies ">
+
+            <img [src]="imageprefix+movies.poster_path" alt="" class="w-100 m-2 h-100 position-relative">
+
+            <h3 class="h6 mt-2 text-center">{{movies.title}}</h3>
+            <h4 class="layer">see more....</h4>
+        </div></a>
+       
+
+
+        <div class="vote position-absolute end-0 top-0">
+              {{movies.vote_average}}
+        </div>
+
+
+    </div>
+
+  
+     
+    
+    </div>
+    
+    <div class="row my-5">
+        
+        <div class="col-md-4">
+            <div class="bodr my-5 w-25">
+            </div>
+    
+            <h2>popular TV <br>
+            to watch rigth now</h2>
+          
+             <p class="second-color mt-3">Trending Tv 
+                to watch rigth now</p>
+    
+            <div class="bodr my-5 w-100">
+            </div>
+    
+        </div>
+       
+    
+        <div *ngFor="let movies of trendingtv" class="col-md-2  m-auto position-relative layer_parent" >
+             
+            <a [routerLink]="['/details', movies.media_type, movies.id]">
+
+               
+                 <div class = "movies">
+
+                    <img [src]="imageprefix+movies.poster_path" alt="" class="w-100 m-2 h-100">
+        
+                    <h3 class="h6 mt-2 text-center">{{movies.name}}</h3>
+                    
+       
+
+              <h4 class="layer">see more....</h4>
+   
+                 </div>
+                    
+        
+                
+            </a>
+      
+    
+    
+            <div class="vote position-absolute end-0 top-0">
+                  {{movies.vote_average}}
+            </div>
+
+    
+        </div>
+    
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+

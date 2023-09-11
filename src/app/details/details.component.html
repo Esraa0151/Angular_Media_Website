@@ -1,0 +1,50 @@
+
+<div class="container">
+    <div class="row " *ngIf="mediaDetails">
+            <div class="col-md-5 ">
+              <div class="img-container">
+                 <img [src]="imageprefix+mediaDetails.poster_path" alt="">
+              </div>
+          </div>   
+   
+          <div class="col-md-7 d-flex justify-content-center align-items-center ">
+            <div class="  d-flex justify-content-center align-items-center">
+              <table class=" "  >
+                  <tr>
+                      <th>Name</th>
+                      <td>{{ mediaDetails.name || mediaDetails.title }}</td>
+                     
+                  </tr>
+      
+                  <tr>
+                      <th>Overview</th>
+                      <td> >{{ mediaDetails.overview }}</td>
+                  </tr>
+    
+              
+              </table>
+      
+            </div>
+             
+            </div>
+
+
+
+
+
+          <div *ngIf="!mediaDetails">
+            <p>Loading media details...</p>
+          </div>
+
+  
+        <!-- Display other details based on your use case -->
+      </div>
+
+</div>
+
+  
+
+
+
+  
+

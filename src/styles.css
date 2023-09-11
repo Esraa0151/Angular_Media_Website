@@ -1,1 +1,151 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&family=Montserrat:ital,wght@0,300;0,400;1,300&display=swap');
+
+
+body 
+{
+    background-color: #131722 !important;
+    color: #fff;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+.register_div
+{
+    width: 65%;
+}
+.closedeye
+{
+    width: 30px;
+    height: 30px;
+    top: 5px;
+    right: 20px;
+    position: absolute;
+}
+@media( max-width: 700px)
+{
+
+}
+nav
+{
+    font-size: 20px;
+}
+
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.vote 
+{
+    background-color: #24baef;
+    padding: 5px;
+    font-weight: 500;
+    color: #fff;
+
+}
+.second-color
+{
+    color: #949cb0 !important;
+}
+.bodr
+{
+    background-color: #a8a8a83d;
+    height: 2px;
+    width: 25%;
+}
+.layer
+{
+    background-color: rgba(0, 0, 0, 0.7);
+   position: absolute;
+   top: 0%;
+   right: 0%;
+   left: 0%;
+   bottom: 0%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.layer_parent:hover .layer
+{
+    display: flex;
+}
+
+.pagination span {
+    margin: 5px;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  .pagination .active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+
+  .col-md-5
+  {
+    height: 100vh;
+  }
+
+
+  .back_image
+  {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh;
+  }
+
+  .img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .img-container img {
+    max-width: 70%;
+  }
+  
+  
+
+ 
+table
+{
+    border-collapse: collapse;
+    width: 90%;
+    border: 1px solid #ccc;
+    height: 50vh;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+
+  .search_div
+{
+  width: 50%;
+}
+  @media (max-width: 767px) 
+  {
+    .search_div 
+    {
+      width: 90%;
+    }
+
+    .register_div
+    {
+        width: 90%;
+    }
+
+    .img-container img {
+      max-width: 90%;
+    }
+    
+  }
