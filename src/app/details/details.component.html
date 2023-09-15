@@ -40,6 +40,18 @@
         <!-- Display other details based on your use case -->
       </div>
 
+      <div class="row" *ngIf="showRow">
+        <div class="col-md-12   ">
+           <h3>Watch Trailer</h3>
+        </div>
+        </div>
+      <div class="row video mb-5" *ngIf="showRow">
+        <div class="col-md-12 d-flex justify-content-center  ">
+            <iframe  [src]="videoURL(videoSrc)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        </div>
+
+
 </div>
 
   
